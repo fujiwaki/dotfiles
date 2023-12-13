@@ -1,0 +1,34 @@
+#
+# Modules
+#
+
+zmodule environment
+zmodule git
+zmodule input
+zmodule termtitle
+zmodule utility
+
+zmodule exa
+zmodule fzf
+zmodule kiesman99/zim-zoxide
+
+#
+# Prompt
+#
+
+zmodule joke/zim-starship
+
+#
+# Completion
+#
+
+zmodule zsh-users/zsh-completions -f src
+zmodule completion
+
+#
+# Modules that must be initialized last
+#
+
+zmodule zsh-users/zsh-syntax-highlighting
+zmodule zsh-users/zsh-history-substring-search
+zmodule zsh-users/zsh-autosuggestions
