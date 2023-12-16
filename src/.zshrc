@@ -12,6 +12,9 @@ if [ -z $USER ]; then
     export USER=$(whoami)
 fi
 
+export LC_CTYPE=en_US.UTF-8
+export TERM=xterm-256color
+
 # --------------------
 # Module configuration
 # --------------------
@@ -69,5 +72,3 @@ case ${OSTYPE} in
         ;;
 esac
 
-export LC_CTYPE=en_US.UTF-8
-export TERM=xterm-256color
