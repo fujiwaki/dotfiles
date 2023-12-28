@@ -46,7 +46,6 @@ cask "steam"
 cask "visual-studio-code"
 mas "Goodnotes", id: 1444383602
 mas "Kindle", id: 302584613
-mas "LINE", id: 539883307
 mas "Xcode", id: 497799835
 vscode "aaron-bond.better-comments"
 vscode "asvetliakov.vscode-neovim"
