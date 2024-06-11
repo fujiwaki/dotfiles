@@ -18,7 +18,7 @@ install-eza:
 	echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main" | sudo tee /etc/apt/sources.list.d/gierens.list
 	sudo chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.list
 	sudo apt update
-	sudo apt -y install eza
+	sudo apt -y install eza=0.18.10
 
 .PHONY: install-debian
 install-debian: install-eza

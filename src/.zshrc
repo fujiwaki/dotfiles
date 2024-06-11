@@ -72,4 +72,3 @@ case ${OSTYPE} in
         alias fd=fdfind
         ;;
 esac
-
