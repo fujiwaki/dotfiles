@@ -11,19 +11,17 @@ dev-apply:
 	rm -rf $(DOTFILES_DIR)
 	cp -r . $(DOTFILES_DIR)
 
-.PHONY: install-eza
-install-eza:
+.PHONY: eza
+eza:
 	sudo mkdir -p /etc/apt/keyrings
 	wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc | sudo gpg --dearmor -o /etc/apt/keyrings/gierens.gpg
 	echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main" | sudo tee /etc/apt/sources.list.d/gierens.list
 	sudo chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.list
-	sudo apt update
-	sudo apt -y install eza=0.18.10
 
-.PHONY: install-debian
-install-debian: install-eza
+.PHONY: apt
+apt: eza
 	sudo apt update
-	sudo apt -y install bat bfs fd-find fzf ripgrep thefuck zoxide
+	sudo apt -y install bat bfs fd-find fzf ripgrep thefuck zoxide eza=0.18.10
 
 .PHONY: starship
 starship:
@@ -51,5 +49,5 @@ mac: starship symlink symlink-mac
 	source ~/.zshrc
 
 .PHONY: debian
-debian: install-debian starship symlink
+debian: apt starship symlink
 	source ~/.zshrc
